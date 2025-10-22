@@ -18,15 +18,9 @@ venv/
 Thumbs.db
 
 # Project outputs
-models/
 results/
 output/
 logs/
-
-# Data (keep structure only)
-data/*
-!data/README.md
-!data/.gitkeep
 
 # Security keys or credentials
 *.pem
@@ -37,6 +31,6 @@ data/*
 .vscode/
 .idea/
 
-# Figures (optional)
+# Figures
 figures/*
 !figures/README.md
