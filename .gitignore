@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+.env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Project outputs
+models/
+results/
+output/
+logs/
+
+# Data (keep structure only)
+data/*
+!data/README.md
+!data/.gitkeep
+
+# Security keys or credentials
+*.pem
+*.key
+*.crt
+
+# IDE configs
+.vscode/
+.idea/
+
+# Figures (optional)
+figures/*
+!figures/README.md

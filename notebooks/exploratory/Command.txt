@@ -1,0 +1,52 @@
+# Filtering ClinVar file in bash
+
+bcftools view -h /mnt/d/thesis/data/clinvar.vcf.gz > /mnt/d/thesis/data/clinvar_selected_variants.vcf ## write header
+
+zgrep -i "CLNVC=single_nucleotide_variant" /mnt/d/thesis/data/clinvar.vcf.gz \
+  | grep -Ei "GENEINFO=.*(BRCA1|BRCA2|TP53|ATM|CHEK2)" \
+  | grep -Ei "CLNSIG=.*(pathogenic|benign)" \
+  | grep -Ei "CLNDN=.*breast" \
+  >> /mnt/d/thesis/data/clinvar_selected_variants.vcf
+
+
+grep "^##contig" /mnt/d/thesis/data/clinvar_selected_variants.vcf | head
+
+grep -v "^#" clinvar_selected_variants.vcf | wc -l
+
+# Construct file for annotation
+
+
+bcftools view -h /mnt/d/thesis/data/clinvar_20250323.vcf.gz > /mnt/d/thesis/data/full_header.txt
+
+bcftools reheader \
+  -h /mnt/d/thesis/data/full_header.txt \
+  -o /mnt/d/thesis/data/clinvar_bc_variants_for_vep_fixed.vcf \
+  /mnt/d/thesis/data/clinvar_bc_variants_for_vep.vcf
+
+
+grep -v "^#" /mnt/d/thesis/data/clinvar_bc_variants_for_vep_fixed.vcf | wc -l
+
+# Annotation
+
+## Pull image
+docker pull ensemblorg/ensembl-vep
+
+## Make directory for VEP
+mkdir D:\vep_data
+
+## Annotate the dataset
+
+docker run -t -i `
+  -v D:\thesis\data:/input `
+  -v D:\vep_data:/data `
+  ensemblorg/ensembl-vep vep `
+  --cache --offline `
+  --assembly GRCh38 `
+  --canonical
+  --input_file /input/clinvar_bc_variants_for_vep_canonical.vcf `
+  --output_file /input/clinvar_bc_annotated.txt `
+  --tab --force_overwrite `
+  --plugin dbNSFP,/data/dbnsfp/dbNSFP5.1a_grch38.gz,SIFT_score,SIFT4G_score,PROVEAN_score,Polyphen2_HDIV_score,Polyphen2_HVAR_score,MutationTaster_score,MutationAssessor_score,fathmm-XF_coding_score,CADD_raw,VEST4_score,DANN_score,MetaSVM_score,MetaLR_score,MetaRNN_score,Eigen-raw_coding,Eigen-PC-raw_coding,M-CAP_score,REVEL_score,MutPred_score,MVP_score,gMVP_score,MPC_score,PrimateAI_score,DEOGEN2_score,BayesDel_addAF_score,BayesDel_noAF_score,ClinPred_score,LIST-S2_score,VARITY_R_score,VARITY_ER_score,VARITY_R_LOO_score,VARITY_ER_LOO_score,ESM1b_score,AlphaMissense_score,PHACTboost_score,MutFormer_score,MutScore_score,phyloP100way_vertebrate,phyloP470way_mammalian,phyloP17way_primate,phastCons100way_vertebrate,phastCons470way_mammalian,phastCons17way_primate,bStatistic,GERP++_RS,GERP_91_mammals,1000Gp3_AF,gnomAD4.1_joint_AF,TOPMed_frz8_AF,AllofUs_ALL_AF,RegeneronME_ALL_AF,dbNSFP_POPMAX_AF `
+  --dir_plugins /opt/vep/Plugins
+
+
