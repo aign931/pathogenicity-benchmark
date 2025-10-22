@@ -1,0 +1,40 @@
+# Training and hp tuning
+python varity_run.py \
+  action=init_session \
+  session_id=benchmark_varity_train \
+  predictor=MYVARITY_R \
+  reinitiate=1 \
+  project_path=/mnt/d/thesis/models/varity/varity_project/
+
+python varity_run.py \
+  action=hp_tuning \
+  session_id=benchmark_varity_train \
+  predictor=MYVARITY_R \
+  cur_test_fold=1 \
+  project_path=/mnt/d/thesis/models/varity/varity_project/
+
+python varity_run.py \
+  action=save_best_hp \
+  session_id=benchmark_varity_train \
+  predictor=MYVARITY_R \
+  cur_test_fold=0 \
+  project_path=/mnt/d/thesis/models/varity/varity_project/
+
+
+# Test
+python varity_run.py \
+  action=init_session \
+  session_id=benchmark_varity_test  \
+  predictor=MYVARITY_R \
+  reinitiate=1 \
+  project_path=/mnt/d/thesis/models/varity/varity_project/
+
+python varity_run.py \
+  action=target_prediction \
+  session_id=benchmark_varity_test \
+  predictor=MYVARITY_R \
+  cur_test_fold=0 \
+  target_file=/mnt/d/thesis/models/varity/varity_project/data/test_set_prep.csv \
+  loo=0 \
+  project_path=/mnt/d/thesis/models/varity/varity_project/
+

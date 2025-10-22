@@ -1,0 +1,48 @@
+## VARITY Configuration ##
+############################################################################################################################################################################
+#Data object configuration
+#varity_er_input and varity_r_input data objects are splitted in nested cross-validation fashion (outer-loop for testing and inner-loop for hyperparameter optimization)
+#varity_er_input_notest and varity_r_input_noset data are used for train final VARITY models (only one dummy outer-loop without any testing data, inner-loop for hyperparameter optimization) 
+############################################################################################################################################################################
+*data: test_split_method|test_split_folds|test_split_ratio|cv_split_method|cv_split_folds|cv_split_ratio|data_file
+############################################################################################################################################################################
+benchmark_input_notest: 1|1|0|1|10|0|test_set_prep.csv
+
+############################################################################################################################################################################
+#Estimator object configuration
+#xgb_c: Gradient boosted trees for binary classification
+############################################################################################################################################################################
+*estimator: algo_name|round_digits
+############################################################################################################################################################################
+xgb_c: xgb_c|4
+
+############################################################################################################################################################################
+#Predictor object configuration
+#VARITY_R and VARITY_ER predictors are used for final VARITY mode
+#VARITY_R_CV and VARITY_ER_CV are used for nested cross-validation to make performance comparison with other predictors (XXX_R_CV or XXX_ER_CV)
+############################################################################################################################################################################
+*predictor: type|ml_type|data|estimator|tune_obj|hyperopt_trials|trials_mv_size|features
+############################################################################################################################################################################
+MYVARITY_R: 0|classification_binary|benchmark_input_notest|xgb_c|macro_cv_aubprc|300|30|[AllofUs_ALL_AF,AlphaMissense_score,BayesDel_addAF_score,BayesDel_noAF_score,CADD_raw,ClinPred_score,DANN_score,DEOGEN2_score,ESM1b_score,Eigen-PC-raw_coding,Eigen-raw_coding,GERP++_RS,GERP_91_mammals,M-CAP_score,MPC_score,MVP_score,MetaLR_score,MetaRNN_score,MetaSVM_score,MutFormer_score,MutScore_score,MutationAssessor_score,MutationTaster_score,PROVEAN_score,Polyphen2_HDIV_score,Polyphen2_HVAR_score,PrimateAI_score,REVEL_score,RegeneronME_ALL_AF,SIFT4G_score,SIFT_score,VEST4_score,bStatistic,dbNSFP_POPMAX_AF,fathmm-XF_coding_score,gMVP_score,gnomAD4.1_joint_AF,phastCons100way_vertebrate,phastCons17way_primate,phastCons470way_mammalian,phyloP100way_vertebrate,phyloP17way_primate,phyloP470way_mammalian]
+
+############################################################################################################################################################################
+#Quality Informative Property object configuration
+############################################################################################################################################################################
+*qip: predictors|weight_function|hyperparameters|set_list|set_type|qip_col|direction|mv_size_percent|mv_data_points|enable
+############################################################################################################################################################################
+
+############################################################################################################################################################################
+#Hyperparameter object configuration
+############################################################################################################################################################################
+*hyperparameter: qip|hp_type|from|to|step|default|data_type|data_interval|significant_digits
+############################################################################################################################################################################
+
+n_estimators: None|3|100|500|1|109|int|0|0
+max_depth: None|3|3|6|1|5|int|0|0
+learning_rate: None|3|0.025|0.5|0.025|0.3|float|0|3
+gamma: None|3|0.5|1|0.05|0.9|float|0|2
+min_child_weight: None|3|1|6|1|2|int|0|0
+subsample: None|3|0.5|1|0.05|0.65|float|0|2
+colsample_bytree: None|3|0.5|1|0.05|0.7|float|0|2
+
+
