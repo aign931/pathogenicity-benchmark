@@ -8,9 +8,6 @@ This repository accompanies the study **"Interpreting Pathogenicity Prediction M
 - `notebooks/`: exploratory and correlation analyses.
 - `env/`: environment specifications for reproducibility.
 
-## Data
-No real data are included.  
-
 ## Data Sources
 - **ClinVar**: https://www.ncbi.nlm.nih.gov/clinvar/
 - **dbNSFP v5.1a**: https://www.dbnsfp.org/
