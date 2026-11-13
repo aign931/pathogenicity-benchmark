@@ -1,0 +1,8 @@
+assignment_order,Uploaded_variation,label,selected_fold,same_label_count_before,total_fold_count_before,selection_rule
+1,232594,1,4,39,103,"min(current_same_label_count, current_total_count, fold_id); pathogenic rows assigned first, then numeric Uploaded_variation"
+2,126637,0,0,64,104,"min(current_same_label_count, current_total_count, fold_id); pathogenic rows assigned first, then numeric Uploaded_variation"
+3,126708,0,4,64,104,"min(current_same_label_count, current_total_count, fold_id); pathogenic rows assigned first, then numeric Uploaded_variation"
+4,126726,0,1,65,104,"min(current_same_label_count, current_total_count, fold_id); pathogenic rows assigned first, then numeric Uploaded_variation"
+5,126765,0,2,65,104,"min(current_same_label_count, current_total_count, fold_id); pathogenic rows assigned first, then numeric Uploaded_variation"
+6,142310,0,3,65,104,"min(current_same_label_count, current_total_count, fold_id); pathogenic rows assigned first, then numeric Uploaded_variation"
+7,650595,0,0,65,105,"min(current_same_label_count, current_total_count, fold_id); pathogenic rows assigned first, then numeric Uploaded_variation"

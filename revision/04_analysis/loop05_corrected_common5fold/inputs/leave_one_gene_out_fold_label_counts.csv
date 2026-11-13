@@ -1,0 +1,11 @@
+fold,source_gene,label,n
+0,ATM,0,6
+0,ATM,1,34
+1,BRCA1,0,163
+1,BRCA1,1,79
+2,BRCA2,0,138
+2,BRCA2,1,54
+3,CHEK2,0,1
+3,CHEK2,1,5
+4,TP53,0,15
+4,TP53,1,24

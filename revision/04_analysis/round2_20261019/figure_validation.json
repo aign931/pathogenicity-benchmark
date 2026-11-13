@@ -1,0 +1,12 @@
+{
+  "correlation_matches_archived": true,
+  "groups_match_archived": true,
+  "features": 41,
+  "groups": 25,
+  "variants_per_beeswarm": 519,
+  "unique_held_out_rows_per_model": 519,
+  "display_features_per_panel": 20,
+  "plotting_shap_version": "0.47.2",
+  "shap_recomputed_for_figures": false,
+  "note": "Saved held-out matrices are plotted without recomputation; plotting-library version does not change explaining-library provenance."
+}

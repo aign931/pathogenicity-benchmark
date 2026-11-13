@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "Please cite the archived version of this software used in your work."
+type: software
+title: "Pathogenicity Benchmark: corrected analysis workflow"
+authors:
+  - family-names: Gai
+    given-names: Ning
+  - family-names: Taylan
+    given-names: Fulya
+  - family-names: Li
+    given-names: Vladimir
+  - family-names: Gillblad
+    given-names: Daniel
+  - family-names: Brahimllari
+    given-names: Orlinda
+  - family-names: Cheng
+    given-names: Ying
+  - family-names: Boman
+    given-names: Magnus
+repository-code: "https://github.com/aign931/pathogenicity-benchmark"
+url: "https://github.com/aign931/pathogenicity-benchmark"
+license: MIT
+abstract: "Corrected shared-fold benchmarking and SHAP analyses of study-specific VARITY-derived, MutScore-derived and MVP-derived implementations."
+keywords:
+  - pathogenicity
+  - reproducibility
+  - variant interpretation
+  - SHAP

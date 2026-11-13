@@ -1,0 +1,9 @@
+check,status,details
+feature_schema,PASS,43 unique features parsed from Loop04 source
+input_row_counts,PASS,"519 canonical + 7 PALB2 unique, non-overlapping IDs"
+vcf_gene_and_label_mapping,PASS,"all 526 IDs matched expected gene, CLNSIG-derived label, and CLNREVSTAT"
+original_folds_preserved,PASS,519 copy is byte-identical and IDs/labels map to canonical cleaned data
+palb2_fold_extension,PASS,all original folds unchanged; 7 PALB2 rows assigned deterministically
+expert_panel_subset,PASS,"strict status yielded 279 rows (225 label 0, 54 label 1) and supports stratified 5-fold"
+no_imputation,PASS,feature NaNs retained; aligned outputs were not median-filled
+logo_is_input_audit_only,PASS,label counts/feasibility computed; no model trained

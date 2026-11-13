@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-13",
+  "scope": "Repository migration and numerical verification; no retraining or re-annotation",
+  "checks": {
+    "scientific_numeric_literals_preserved": true,
+    "primary_model_runtime": {
+      "varity": {
+        "folds": 5,
+        "max_saved_shap_difference": 1.174163819506191e-07,
+        "max_probability_difference": 2.848205571392981e-08
+      },
+      "mutscore": {
+        "folds": 5,
+        "max_saved_shap_difference": 9.996344030316351e-17,
+        "max_probability_difference": 0.0
+      },
+      "mvp": {
+        "folds": 5,
+        "max_saved_shap_difference": 4.9960036108132044e-15,
+        "max_probability_difference": 2.767486573240774e-08
+      }
+    },
+    "model_fold_preprocessing_records": 75,
+    "mvp_scaler_background_sets": 25,
+    "citation_official_schema": "passed",
+    "legacy_git_files_preserved": 18,
+    "manifest_tamper_missing_path_escape": "passed",
+    "supplementary_figure_code": "passed; correlation/groups match; 519 unique held-out rows/model",
+    "historical_handoff_manifest": {
+      "entries": 835,
+      "failures": 0
+    }
+  },
+  "limits": [
+    "No fresh installation of historical environments",
+    "No model retraining",
+    "No full re-annotation",
+    "No release tag or DOI created",
+    "Processed annotation tables remain external pending applicable source permissions"
+  ]
+}

@@ -1,0 +1,1 @@
+{"modules": {"joblib": "1.4.2", "numpy": "2.2.4", "pandas": "2.2.3", "scipy": "1.15.2", "shap": "0.47.2", "sklearn": "1.6.1"}, "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39", "python": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"}

@@ -1,36 +1,22 @@
-# Python
 __pycache__/
 *.py[cod]
-*.egg-info/
-*.egg
-*.pyo
-
-# Virtual environments
 .venv/
 venv/
-.env/
-
-# Jupyter
+.env
 .ipynb_checkpoints/
-
-# OS metadata
 .DS_Store
 Thumbs.db
-
-# Project outputs
-results/
-output/
-logs/
-
-# Security keys or credentials
+work/
+archives/
+*.zip
+*.gz
+*.tbi
+*.pkl
+*.h5
+*.model
+*.joblib
+*.pdf
+*.png
 *.pem
 *.key
 *.crt
-
-# IDE configs
-.vscode/
-.idea/
-
-# Figures
-figures/*
-!figures/README.md
