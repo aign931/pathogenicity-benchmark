@@ -1,15 +1,29 @@
-# Repository and reproducibility archive guide
+# Supporting materials
 
-## Ordinary Git
-This repository contains corrected Python/R code, the MVP architecture, input schemas, feature orders, fold assignments, compact audits, three separate environment freezes, citation metadata, provenance statements, this guide, SHA256SUMS.csv and verify_package.py.
+The Git repository contains analysis code, feature definitions, fold assignments, environment versions and documentation.
 
-## Separate author-held evidence archive
-The October handoff contains 835 manifest-listed payload files, including 75 persisted models, preprocessing objects, predictions, SHAP matrices, statistics and manuscript sources. Its ZIP is 249,664,612 bytes (compressed); this is distinct from extracted size. Its ZIP SHA256 is cce98739343c8eea4e65d936829a799d1f38925b1337391c7845c11b2aac48bb.
+The supporting results are held separately: fitted models, preprocessing objects, held-out predictions, SHAP matrices, statistical tables and figures. Large generated files are not part of ordinary Git history.
 
-The exact inventory is provenance/handoff_20261020_SHA256SUMS.csv. This inventory does not mean the archive has been published. Do not upload the entire ZIP to Git history. A public deposit must be assembled after reviewing data-bearing files against source permissions; the current handoff is not automatically cleared for unrestricted redistribution.
+For analysis, arrange a local copy as follows:
 
-## Integrity
-The root manifest covers repository files except itself. The historical handoff manifest covers the separate unchanged package. Run verify_package.py with the correct root and manifest. Missing external evidence is a failed check, never a silently skipped success.
+    data/
+      processed/
+        canonical519.csv
+        pooled526.csv
+        expert_panel.csv
+        canonical519_aligned.csv
+        vus.csv
+    results/
+      full519/
+      reduced519/
+      palb2_526/
+      expert_panel/
+      leave_one_gene_out/
+      statistical_comparison/
+      vus/
 
-## Release
-Use RELEASE_CHECKLIST.md. The corresponding author retains the planned tag/release step. A source-only Zenodo DOI cannot substantiate a manuscript statement that the same record includes unuploaded models and SHAP outputs.
+Each labelled scenario directory contains models/, preprocess/, predictions/, shap/ and tables/. VUS descriptive outputs belong directly in results/vus/.
+
+The filenames used by the model scripts are unchanged within each scenario. The processed-input names and directory structure above are the public interface; local project-management directories are not required.
+
+Follow REPRODUCIBILITY.md for the commands and DATA_SOURCES.md for source terms. A public archive of supporting results should be deposited separately after its contents and redistribution terms are confirmed. The manuscript's Data Availability statement should describe the files actually present in the cited archive.

@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Please cite the archived version of this software used in your work."
 type: software
-title: "Pathogenicity Benchmark: corrected analysis workflow"
+title: "Pathogenicity Benchmark"
 authors:
   - family-names: Gai
     given-names: Ning
@@ -20,7 +20,7 @@ authors:
 repository-code: "https://github.com/aign931/pathogenicity-benchmark"
 url: "https://github.com/aign931/pathogenicity-benchmark"
 license: MIT
-abstract: "Corrected shared-fold benchmarking and SHAP analyses of study-specific VARITY-derived, MutScore-derived and MVP-derived implementations."
+abstract: "Shared-fold benchmarking and SHAP analyses of study-specific VARITY-derived, MutScore-derived and MVP-derived implementations."
 keywords:
   - pathogenicity
   - reproducibility

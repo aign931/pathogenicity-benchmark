@@ -1,3 +1,0 @@
-/home/ning/miniconda3/envs/varity_env/lib/python3.7/site-packages/sklearn/utils/validation.py:37: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
-  LARGE_SPARSE_SUPPORTED = LooseVersion(scipy_version) >= '0.14.0'
-{"modules": {"numpy": "1.16.0", "pandas": "0.24.0", "scipy": "1.2.0", "shap": "0.34.0", "sklearn": "0.20.2", "xgboost": "0.90"}, "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-debian-trixie-sid", "python": "3.7.2 (default, Dec 29 2018, 06:19:36) \n[GCC 7.3.0]"}

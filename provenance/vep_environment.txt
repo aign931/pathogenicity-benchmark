@@ -1,7 +1,0 @@
-﻿docker_server_version=28.1.1
-image=ensemblorg/ensembl-vep:latest
-image_id=sha256:d46fbc66e5ee1c90184d0ea7c692c76984bd9a0c7607ae83d5f3cbdfcc95767a
-image_repo_digests=["ensemblorg/ensembl-vep@sha256:d46fbc66e5ee1c90184d0ea7c692c76984bd9a0c7607ae83d5f3cbdfcc95767a"]
-vep_cache=/opt/vep/.vep/homo_sapiens/113_GRCh38
-dbnsfp=/opt/vep/.vep/dbnsfp/dbNSFP5.1a_grch38.gz
-dbnsfp_index=/opt/vep/.vep/dbnsfp/dbNSFP5.1a_grch38.gz.tbi

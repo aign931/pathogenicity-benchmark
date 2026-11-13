@@ -1,9 +1,0 @@
-CLNREVSTAT,review_stars,is_expert_panel,label,count
-reviewed_by_expert_panel,3,1,0,225
-reviewed_by_expert_panel,3,1,1,54
-"criteria_provided,_multiple_submitters,_no_conflicts",2,0,0,60
-"criteria_provided,_multiple_submitters,_no_conflicts",2,0,1,127
-"criteria_provided,_single_submitter",1,0,0,36
-"criteria_provided,_single_submitter",1,0,1,14
-no_assertion_criteria_provided,0,0,0,2
-no_assertion_criteria_provided,0,0,1,1
